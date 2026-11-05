@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zawiyah | Offering Evaluation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="images/Style3.png" id="logo" alt="Website Logo">
+
+        <nav id="navbar">
+            <a href="Homepage.html">Home</a>
+            <a href="Offerings.html">Offerings</a>
+            <a href="MemberHub.html" class="active">Member Hub</a>
+            <a href="ManagerHub.html">Manager Hub</a>
+            <a href="AboutUs.html">About Us</a>
+        </nav>
+
+        <a href="MemberHub.html">
+            <img src="images/usericon.png" id="user-icon" alt="User profile">
+        </a>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="Homepage.html">Home</a>
+        &gt;
+        <a href="MemberHub.html">Member Hub</a>
+        &gt;
+        <a href="Offering-Evaluation.html" class="active">Offering Evaluation Page</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="evaluation-page">
+
+
+        <h1>Offering Evaluation Page</h1>
+
+        <form class="evaluation-form" action="#" method="post">
+
+            <label for="offering">Select Completed Offering</label>
+
+
+            <select id="offering" name="offering" required>
+                <option value="" disabled selected>
+                    Select a completed offering
+                </option>
+
+                <option value="lighting">
+                    Lighting &amp; Composition Basics
+                </option>
+                <option value="feedback">
+                    Live Photo Critique &amp; Feedback
+                </option>
+                <option value="mobile">
+                    Mobile Photography &amp; Editing
+                </option>
+                <option value="editing">
+                    Interactive Photo Editing
+                </option>
+                <option value="studio">
+                    Studio Portrait &amp; Lighting
+                </option>
+                <option value="astro">
+                    Night &amp; Astrophotography
+                </option>
+            </select>
+            <!-- Rating -->
+
+            <fieldset class="rating">
+                <legend>Rating:</legend>
+
+                <input type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5">★</label>
+
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </fieldset>
+
+
+            <!-- Written Feedback -->
+            <label for="feedback">Written Feedback:</label>
+
+            <textarea id="feedback" name="feedback" placeholder="Share your experience with this workshop..." rows="5"
+                required></textarea>
+
+            <input type="submit" value="Submit Evaluation" class="button">
+
+        </form>
+
+        <p><a href="MemberHub.html" class="back-to">Back to Member Hub</a></p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <p><b>Connect With Us</b></p>
+
+            <div class="social-icons">
+                <a href="#">
+                    <img src="images/facebook.png" alt="Facebook">
+                </a>
+
+                <a href="#">
+                    <img src="images/instagram.png" alt="Instagram">
+                </a>
+
+                <a href="#">
+                    <img src="images/x.png" alt="X">
+                </a>
+            </div>
+
+            <p><b>@Zawiyah_sa</b></p>
+        </div>
+
+        <div class="logo">
+            <img src="images/Logomark.png" id="logomark" alt="Website Logo">
+        </div>
+
+        <div class="contact">
+            <p><b>Contact Us</b></p>
+            <p>
+                <b>Address:</b> 123 Main Street,<br>
+                Riyadh, Saudi Arabia
+            </p>
+            <p><b>Phone:</b> +966 11 123 4567</p>
+            <p><b>Email:</b> info@zawiyah.sa</p>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright &copy; 2026 Zawiyah</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

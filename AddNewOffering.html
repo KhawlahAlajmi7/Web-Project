@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zawiyah | Add New Offering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="images/Style3.png" id="logo" alt="Website Logo">
+
+        <nav id="navbar">
+            <a href="Homepage.html">Home</a>
+            <a href="Offerings.html">Offerings</a>
+            <a href="MemberHub.html">Member Hub</a>
+            <a href="ManagerHub.html" class="active">Manager Hub</a>
+            <a href="AboutUs.html">About Us</a>
+        </nav>
+
+        <a href="MemberHub.html">
+            <img src="images/usericon.png" id="user-icon" alt="User profile">
+        </a>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="Homepage.html">Home</a>
+        &gt;
+        <a href="ManagerHub.html">Manager Hub</a>
+        &gt;
+        <a href="AddNewOffering.html" class="active">Add New Offering</a>
+    </div>
+
+    <main class="add-offering-page">
+
+        <section class="add-offering-intro">
+            <h1>Add New Offering</h1>
+            <p>Add a new photography workshop, class, activity, or experience</p>
+        </section>
+
+        <form class="add-offering-form" action="#" method="post" enctype="multipart/form-data">
+
+            <div class="add-offering-fields">
+                <label for="offering-name">Offering Name</label>
+                <input type="text" id="offering-name" name="offering-name" placeholder="Enter offering name" required>
+
+                <label for="offering-price">Price / Registration Fee</label>
+                <input type="number" id="offering-price" name="offering-price" min="0" step="0.1" placeholder="0 SAR"
+                    required>
+
+                <label for="offering-description">Description</label>
+                <textarea id="offering-description" name="offering-description"
+                    placeholder="Describe the photography offering..." required></textarea>
+            </div>
+
+            <div class="add-offering-image">
+                <label for="offering-image">Offering Image</label>
+
+                <img src="Collection/upload_image.png" alt="Upload an offering image">
+
+                <input type="file" id="offering-image" name="offering-image">
+
+            </div>
+
+            <div class="add-offering-submit">
+                <input type="submit" value="Add Offering">
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p><b>Connect With Us</b></p>
+
+            <div class="social-icons">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/x.png" alt="X"></a>
+            </div>
+
+            <p><b>@Zawiyah_sa</b></p>
+        </div>
+
+        <div class="logo">
+            <img src="images/Logomark.png" id="logomark" alt="Website Logo">
+        </div>
+
+        <div class="contact">
+            <p><b>Contact Us</b></p>
+            <p><b>Address:</b> 123 Main Street,<br>Riyadh, Saudi Arabia</p>
+            <p><b>Phone:</b> +966 11 123 4567</p>
+            <p><b>Email:</b> info@zawiyah.sa</p>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright &copy; 2026 Zawiyah</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

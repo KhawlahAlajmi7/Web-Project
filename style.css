@@ -1,0 +1,2008 @@
+/* GENERAL*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslateblue;
+    background-color: snow;
+}
+
+.header {
+    /*HEADER*/
+    background-color: snow;
+    padding: 30px 5%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.header a {
+    justify-self: end;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#logo {
+    width: auto;
+    height: 60px;
+    display: block;
+}
+
+#user-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+
+/*NAVIGATION*/
+#navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+#navbar a {
+    color: darkslateblue;
+    text-decoration: none;
+}
+
+#navbar a:hover,
+#navbar a:active {
+    font-weight: bold;
+    color: mediumvioletred;
+}
+
+#navbar a.active {
+    font-weight: bold;
+    color: mediumvioletred;
+    border-bottom: 2px solid mediumvioletred;
+}
+
+/*HEADER END*/
+
+/*Back To ... Buttons*/
+.back-to {
+    display: inline-block;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: darkslateblue;
+    transition: color 0.2s ease;
+}
+
+.back-to:hover {
+    color: #D4148E;
+}
+
+p:has(.back-to) {
+    text-align: center;
+}
+
+/*Back To ... Buttons*/
+
+/*HOMEPAGE*/
+.herotext {
+    /*HERO SECTION*/
+    background-color: snow;
+    grid-column: 1 / -1;
+    margin-top: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.herocontainer {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 0.8fr;
+    grid-template-rows: 230px 200px;
+    column-gap: 20px;
+    row-gap: 20px;
+    align-items: stretch;
+}
+
+.herocontent {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 50px;
+}
+
+.herocontent h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin: 0 0 25px;
+    font-weight: bold;
+}
+
+.herocontent p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0 0 30px;
+}
+
+.heroimage3 {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.heroimage1 {
+    grid-column: 3;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.heroimage2 {
+    grid-column: 3;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.herocontent .button {
+    padding: 12px 30px;
+    align-self: flex-start;
+}
+
+.button {
+    background-color: darkslateblue;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: mediumvioletred;
+    color: white;
+}
+
+.offerings {
+    /*OFFERINGS SECTION*/
+    background-color: snow;
+    padding: 100px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    align-items: flex-start;
+}
+
+.offerings h1 {
+    width: 100%;
+    font-size: 36px;
+    margin: 0 0 30px;
+    text-align: center;
+}
+
+.offerings .card {
+    background-color: white;
+    width: 30%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.offerings .card:hover {
+    background-color: mediumvioletred;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.offerings .card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.cardcontent {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.cardcontent p:first-child {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.cardcontent p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.offerings .text {
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.offerings .text p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.offerings .extra {
+    display: none;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.offerings .card:hover .extra {
+    display: block;
+}
+
+.offerings .card:hover .cardcontent p {
+    color: white;
+}
+
+.testimonials {
+    /*TESTIMONIALS SECTION*/
+    background-color: snow;
+    padding: 30px 6%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 70px;
+    row-gap: 60px;
+}
+
+.testimonials h1 {
+    grid-column: 1 / 3;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: darkslateblue;
+}
+
+.testimonials .review {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+    padding: 35px 40px;
+    min-height: 150px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.testimonials .review:hover {
+    background-color: mediumvioletred;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials .review:hover .reviewcontent p {
+    color: white;
+}
+
+.testimonials .review img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reviewcontent {
+    text-align: left;
+}
+
+.reviewcontent p:first-child {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: darkslateblue;
+}
+
+.reviewcontent p:last-child {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: darkslateblue;
+}
+
+
+.weeklyphoto {
+    /*PHOTO OF THE WEEK SECTION*/
+    background-color: snow;
+    padding: 100px 6%;
+    text-align: center;
+}
+
+.weeklyphoto h1 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: darkslateblue;
+}
+
+.week {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.week img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photodetails {
+    background-color: darkslateblue;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    padding: 30px 25px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.photodetails:hover {
+    background-color: mediumvioletred;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.lowtitle {
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+
+
+
+/*REQUEST TO JOIN AN OFFERING PAGE*/
+.join-offering {
+    background-color: snow;
+    padding: 30px 6%;
+    text-align: center;
+}
+
+.join-offering h1 {
+    font-size: 36px;
+    color: darkslateblue;
+    margin-bottom: 35px;
+}
+
+.request {
+    background-color: white;
+    width: 550px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 35px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.request label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.request input[type="text"],
+.request input[type="date"],
+.request select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 30px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.request input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
+
+.join-offering p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/*FOOTER*/
+footer {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 40px;
+    padding-top: 50px;
+    text-align: center;
+    color: darkslateblue;
+    align-items: center;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logomark {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.contact {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.copyright {
+    grid-column: 1/4;
+    background-color: darkslateblue;
+    color: white;
+    text-align: center;
+}
+
+/*FOOTER END*/
+
+
+
+/* CLUB OFFERINGS PAGE */
+
+.offerings-hero {
+    background-color: #f4f0fa;
+    margin: 25px 0 0;
+    padding: 55px 6%;
+    text-align: center;
+    border-radius: 0 8px 0 8px;
+    box-shadow: none;
+}
+
+.offerings-intro {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.offerings-intro h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: darkslateblue;
+}
+
+
+
+.offerings-intro p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.5;
+    color: darkslateblue;
+}
+
+
+
+.offerings-section {
+    padding: 45px 6% 70px;
+}
+
+.sorting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 18px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid lightgray;
+    font-size: 12px;
+}
+
+.sorting label {
+    white-space: nowrap;
+}
+
+.sorting select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 7px;
+    border: 1px solid lightgray;
+    background-color: white;
+    color: darkslateblue;
+}
+
+.offering-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 35px;
+    align-items: stretch;
+}
+
+/* OFFERING CARDS */
+
+.offering-card {
+    background-color: white;
+    border: none;
+    width: 100%;
+    min-width: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.offering-card:hover {
+    background-color: mediumvioletred;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.offering-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.offering-details {
+    padding: 20px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.offering-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.offering-type {
+    align-self: flex-start;
+    border: 1px solid darkgray;
+    padding: 3px 12px;
+    border-radius: 3px;
+}
+
+
+.offering-price {
+    align-self: flex-end;
+}
+
+.offering-card h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.offering-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: darkslateblue;
+}
+
+.offering-card:hover h2,
+.offering-card:hover p,
+.offering-card:hover .offering-price,
+.offering-card:hover .offering-type {
+    color: white;
+}
+
+.offering-card p {
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    color: darkslateblue;
+}
+
+.offering-card .button {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    padding: 7px 4px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    color: darkslateblue;
+    box-shadow: none;
+    text-align: center;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+
+
+.offering-card .button:hover {
+    background-color: darkslateblue;
+    color: white;
+}
+
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 800px) {
+    .offering-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .offerings-hero {
+        padding: 25px 5%;
+    }
+
+    .offerings-section {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .offering-card img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 500px) {
+    .offering-list {
+        grid-template-columns: 1fr;
+    }
+
+    .offerings-intro h1 {
+        font-size: 24px;
+    }
+
+    .offerings-hero {
+        margin-left: 4%;
+        margin-right: 4%;
+        padding: 20px 4%;
+    }
+
+    .offering-card img {
+        height: 200px;
+    }
+}
+
+
+/* =====================================
+   OFFERING EVALUATION PAGE
+   ===================================== */
+
+.evaluation-page {
+    max-width: 750px;
+    margin: 50px auto 30px;
+    padding: 0 20px 25px;
+    color: darkslateblue;
+}
+
+/* Page title */
+
+.evaluation-page h1 {
+    text-align: center;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslateblue;
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+/* Evaluation form box */
+
+.evaluation-form {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+
+.evaluation-form>label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: darkslateblue;
+}
+
+/* Offering dropdown and feedback */
+
+.evaluation-form select,
+.evaluation-form textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 25px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: white;
+    color: darkslateblue;
+}
+
+/* Written feedback box */
+
+.evaluation-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Rating section */
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+    border: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.rating legend {
+    color: darkslateblue;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.rating input {
+    display: none;
+}
+
+/* Rating stars */
+
+.rating label {
+    font-size: 30px;
+    color: #d5d0df;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.rating input:checked~label {
+    color: #F7941D;
+}
+
+.rating label:hover,
+.rating label:hover~label {
+    color: #F7941D;
+}
+
+/* Submit button */
+
+.evaluation-form input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    .evaluation-page {
+        margin: 10px auto 20px;
+        padding: 0 10px 20px;
+    }
+
+    .evaluation-page h1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .evaluation-form {
+        padding: 25px 20px;
+    }
+
+    .evaluation-form textarea {
+        min-height: 140px;
+        resize: vertical;
+    }
+}
+
+
+/* MANAGER HUB PAGE */
+
+.manager-hero {
+    background-color: #f4f0fa;
+    padding: 35px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.manager-intro {
+    width: 50%;
+}
+
+.manager-intro h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    color: darkslateblue;
+}
+
+.manager-intro p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    color: darkslateblue;
+}
+
+.manager-hero-image {
+    width: 45%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.manager-offerings-section {
+    padding: 45px 7% 90px;
+}
+
+.manager-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 12px;
+    margin-bottom: 35px;
+}
+
+.manager-section-heading h2 {
+    font-size: 28px;
+    color: darkslateblue;
+    margin: 0;
+}
+
+.manager-button {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+    background-color: #eeeeee;
+    color: darkslateblue;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.manager-button:hover {
+    background-color: mediumvioletred;
+    color: white;
+}
+
+.manager-price {
+    display: block;
+    margin-top: auto;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: bold;
+    color: black;
+    align-self: flex-start;
+}
+
+.manager-team-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.manager-team-button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 24px;
+}
+
+@media (max-width: 800px) {
+    .manager-hero {
+        padding: 30px 5%;
+        gap: 25px;
+    }
+
+    .manager-hero-image {
+        height: 190px;
+    }
+
+    .manager-offerings-section {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .manager-section-heading h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 500px) {
+    .manager-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .manager-intro,
+    .manager-hero-image {
+        width: 100%;
+    }
+
+    .manager-hero-image {
+        height: 200px;
+    }
+
+    .manager-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .manager-section-heading h2 {
+        font-size: 24px;
+    }
+
+    .manager-button {
+        max-width: 100%;
+    }
+
+    .manager-team-button {
+        width: 100%;
+    }
+}
+
+/* ADD NEW OFFERING PAGE */
+
+.add-offering-page {
+    padding: 45px 6% 90px;
+}
+
+.add-offering-intro {
+    margin-bottom: 65px;
+}
+
+.add-offering-intro h1 {
+    font-size: 28px;
+    color: darkslateblue;
+    margin: 0 0 12px;
+}
+
+.add-offering-intro p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.add-offering-form {
+    background-color: #eeeeee;
+    padding: 40px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.add-offering-fields {
+    width: 55%;
+}
+
+.add-offering-fields label,
+.add-offering-image label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.add-offering-fields input[type="text"],
+.add-offering-fields input[type="number"],
+.add-offering-fields textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 25px;
+    border: 1px solid darkgray;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: darkslateblue;
+}
+
+.add-offering-fields textarea {
+    height: 90px;
+    resize: vertical;
+}
+
+.add-offering-image {
+    width: 30%;
+}
+
+.add-offering-image img {
+    display: block;
+    width: 80%;
+    height: 210px;
+    object-fit: cover;
+    border: 1px solid darkgray;
+    margin-bottom: 12px;
+}
+
+.add-offering-image input[type="file"] {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+
+
+
+.add-offering-submit {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.add-offering-submit input[type="submit"] {
+    width: 40%;
+    padding: 12px 20px;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+    background-color: #d6d6d6;
+    color: darkslateblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-offering-submit input[type="submit"]:hover {
+    background-color: mediumvioletred;
+    color: white;
+}
+
+@media (max-width: 700px) {
+    .add-offering-page {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .add-offering-intro {
+        margin-bottom: 35px;
+    }
+
+    .add-offering-form {
+        padding: 30px 5%;
+    }
+
+    .add-offering-fields,
+    .add-offering-image {
+        width: 100%;
+    }
+
+    .add-offering-submit input[type="submit"] {
+        width: 100%;
+    }
+
+
+}
+
+/* About Us Page */
+.about-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 30px 7%;
+    background-color: #f4f0fa;
+}
+
+.about-text {
+    width: 43%;
+}
+
+.about-text h1 {
+    color: darkslateblue;
+    font-size: 36px;
+    margin: 0 0 10px;
+}
+
+.about-text p,
+.mission-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.about-image {
+    width: 50%;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+
+/* OUR MISSION */
+
+.mission-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+    padding: 30px 7%;
+    background-color: snow;
+}
+
+.mission-image {
+    width: 45%;
+}
+
+.mission-image img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.mission-text {
+    width: 50%;
+}
+
+.mission-text h2 {
+    color: darkslateblue;
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+
+/* INSTRUCTORS */
+
+.instructors-section {
+    padding: 30px 7%;
+    background-color: snow;
+}
+
+.instructors-section>h2 {
+    color: darkslateblue;
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.instructors-intro {
+    max-width: 600px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 25px;
+}
+
+.instructors-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 5px 0 15px;
+}
+
+.instructor-card {
+    flex: 1 0 20%;
+    min-width: 150px;
+    padding: 12px;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+
+.instructor-card img {
+    display: block;
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.instructor-card h3 {
+    color: darkslateblue;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.instructor-card {
+    transition: 0.3s;
+}
+
+.instructor-card:hover {
+    background-color: mediumvioletred;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.instructor-card:hover h3,
+.instructor-card:hover p,
+.instructor-card:hover a {
+    color: white;
+}
+
+.instructor-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    min-height: 36px;
+}
+
+.instructor-card a {
+    color: darkslateblue;
+    font-size: 12px;
+}
+
+.instructor-card a:hover {
+    color: mediumvioletred;
+}
+
+
+/* JOIN OUR TEAM */
+
+.join-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 35px 6%;
+    background-color: #eeeeee;
+}
+
+.join-description {
+    width: 42%;
+}
+
+.join-description h2 {
+    color: darkslateblue;
+    font-size: 32px;
+    margin: 0 0 15px;
+}
+
+.join-description p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.join-form {
+    width: 55%;
+    padding: 25px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.join-form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 13px;
+    color: darkslateblue;
+}
+
+.join-form input[type="text"],
+.join-form input[type="email"],
+.join-form input[type="date"],
+.join-form input[type="file"],
+.join-form select,
+.join-form textarea {
+    display: block;
+    width: 100%;
+    padding: 9px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.join-form textarea {
+    min-height: 55px;
+    resize: vertical;
+}
+
+.join-form input[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 18px;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.join-form input[type="submit"]:hover {
+    background-color: mediumvioletred;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+
+    .about-intro,
+    .mission-section,
+    .join-team {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .about-text,
+    .about-image,
+    .mission-image,
+    .mission-text,
+    .join-description,
+    .join-form {
+        width: 100%;
+    }
+
+    .about-text h1 {
+        font-size: 28px;
+    }
+
+    .instructor-card {
+        flex-basis: 180px;
+    }
+}
+
+
+
+/* INSTRUCTOR PROFILE PAGE */
+
+.instructor-profile-page {
+    max-width: 1000px;
+    margin: 45px auto 80px;
+    padding: 0 25px;
+    color: darkslateblue;
+}
+
+.instructor-profile-page h1 {
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: white;
+}
+
+.profile-table th,
+.profile-table td {
+    border: 1px solid #bdbdbd;
+    padding: 18px 20px;
+    font-size: 14px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.profile-table .profile-name {
+    background-color: #e3e5e9;
+    text-align: center;
+    font-size: 28px;
+    color: #292044;
+}
+
+.profile-table .profile-photo {
+    width: 230px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.profile-table .instructor-photo {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-table .profile-photo p {
+    font-size: 12px;
+    text-align: center;
+}
+
+.profile-table th:not(.profile-name) {
+    background-color: #eeeeee;
+    text-align: center;
+    width: 180px;
+}
+
+/* BREADCRUMBS */
+.breadcrumbs {
+    padding: 15px 7%;
+    font-size: 14px;
+    color: darkslateblue;
+    background-color: #eeeeee;
+}
+
+.breadcrumbs a {
+    color: darkslateblue;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: mediumvioletred;
+    text-decoration: underline;
+}
+
+.breadcrumbs .active {
+    color: darkslateblue;
+    font-weight: bold;
+}
+
+/* Circular Instructor Images */
+.instructors-list .instructor-card img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    min-width: 160px;
+    max-width: 160px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.photo-upload {
+    text-align: center;
+}
+
+.photo-preview {
+    width: 180px;
+    height: 180px;
+    border: 1px solid #bbb;
+    background-color: #f2f2f2;
+    margin: 0 auto 15px;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: darkslateblue;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#photoInput {
+    display: none;
+}
+
+/* JOIN OUR TEAM */
+.join-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 5%;
+    background-color: #eeeeee;
+}
+
+.join-description {
+    flex: 1;
+    min-width: 0;
+    color: darkslateblue;
+}
+
+.join-description h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.join-description p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.join-content {
+    flex: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    background-color: white;
+    padding: 30px;
+    min-width: 0;
+}
+
+/* PHOTO ON THE LEFT */
+.photo-upload {
+    flex: 0 0 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.photo-upload img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.photo-upload label {
+    background-color: darkslateblue;
+    color: white;
+    padding: 10px 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.photo-upload input[type="file"] {
+    width: 100%;
+    font-size: 12px;
+}
+
+/* FORM ON THE RIGHT */
+.join-form {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.join-form label {
+    color: darkslateblue;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.join-form input:not([type="submit"]),
+.join-form select,
+.join-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.join-form textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+.join-form input[type="submit"] {
+    align-self: flex-start;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* SMALL SCREENS */
+@media (max-width: 800px) {
+    .join-team {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .join-content {
+        flex-direction: column;
+    }
+
+    .photo-upload {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+/* MEMBER HUB PAGE */
+
+.member-dashboard {
+    padding: 45px 7% 90px;
+    color: darkslateblue;
+}
+
+.member-dashboard h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0 0 55px;
+}
+
+.member-requests {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.member-requests h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.requests-table th,
+.requests-table td {
+    border: 1px solid #cccccc;
+    padding: 18px 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.requests-table th {
+    background-color: #eeeeee;
+    font-weight: bold;
+}
+
+.member-actions {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.member-btn {
+    display: inline-block;
+    background-color: darkslateblue;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.member-btn:hover {
+    background-color: mediumvioletred;
+}
+
+@media (max-width: 600px) {
+    .member-dashboard {
+        padding: 30px 4%;
+    }
+
+    .requests-table th,
+    .requests-table td {
+        padding: 10px 5px;
+        font-size: 11px;
+    }
+
+    .member-actions {
+        gap: 15px;
+    }
+}
+
+/* MEMBER HUB CONTAINER */
+
+.member-requests {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid #cccccc;
+    background-color: white;
+}
+
+.requests-table td:first-child,
+.requests-table th:first-child {
+    text-align: left;
+}
+
+/* MANAGE INSTRUCTORS PAGE */
+
+.manage-instructors-page {
+    padding: 45px 7% 90px;
+    color: darkslateblue;
+}
+
+.manage-intro {
+    margin-bottom: 50px;
+}
+
+.manage-intro h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.manage-intro p {
+    font-size: 14px;
+}
+
+/* CURRENT INSTRUCTORS */
+
+.manage-team-section,
+.add-instructor-section {
+    background-color: #eeeeee;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.manage-team-section h2,
+.add-instructor-section h2 {
+    font-size: 22px;
+    margin: 0 0 25px;
+}
+
+.manage-team-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.manage-team-card {
+    background-color: white;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    text-align: center;
+    flex: 1 1 180px;
+}
+
+.manage-team-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.manage-team-card label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.manage-delete-action,
+.manage-add-action {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.manage-submit {
+    background-color: #d6d6d6;
+    color: darkslateblue;
+    border: 1px solid darkgray;
+    padding: 12px 45px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.manage-submit:hover {
+    background-color: mediumvioletred;
+    color: white;
+}
+
+.manage-team-card {
+    transition: 0.3s;
+}
+
+.manage-team-card:hover {
+    background-color: mediumvioletred;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.manage-team-card:hover label {
+    color: white;
+}
+
+
+/* ADD INSTRUCTOR */
+
+.manage-instructor-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.manage-form-fields {
+    width: 55%;
+}
+
+.manage-form-fields label,
+.manage-photo-section label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.manage-form-fields input,
+.manage-form-fields textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #cccccc;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.manage-form-fields textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+.manage-photo-section {
+    width: 30%;
+    text-align: center;
+}
+
+.manage-photo-section label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.manage-photo-section img {
+    display: block;
+    width: 80%;
+    height: 210px;
+    object-fit: cover;
+    border: 1px solid darkgray;
+    margin-bottom: 12px;
+}
+
+.manage-photo-section input[type="file"] {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    font-size: 12px;
+}
+
+.manage-add-action {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.manage-add-action input[type="submit"] {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    .manage-team-card {
+        flex-basis: 40%;
+    }
+
+    .manage-form-fields,
+    .manage-photo-section {
+        width: 100%;
+    }
+
+    .manage-instructors-page {
+        padding: 30px 4%;
+    }
+}
+
+/* Instructor Cards */
+.manage-team-card {
+    text-align: center;
+}
+
+.manage-team-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.manage-team-card label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+#photo-preview {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
