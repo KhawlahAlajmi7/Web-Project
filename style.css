@@ -1470,7 +1470,7 @@ footer {
     color: #292044;
 }
 
-.profile-table .profile-photo {
+.profile-table .profile-photo-cell {
     width: 230px;
     text-align: center;
     vertical-align: middle;
@@ -1479,17 +1479,18 @@ footer {
 
 .profile-table .instructor-photo {
     display: block;
-    width: 100%;
-    height: 260px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
-    margin-bottom: 10px;
+    object-position: center top;
+    border-radius: 50%;
+    margin: 0 auto 10px;
 }
 
-.profile-table .profile-photo p {
+.profile-table .profile-photo-cell p {
     font-size: 12px;
     text-align: center;
 }
-
 .profile-table th:not(.profile-name) {
     background-color: #eeeeee;
     text-align: center;
