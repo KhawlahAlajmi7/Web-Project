@@ -217,6 +217,10 @@ const joinForm = document.getElementById("joinForm");
 joinForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
+    if (!joinForm.checkValidity()) {
+    joinForm.reportValidity();
+    return;
+}
 
     const name = document.getElementById("name").value.trim();
     const dob = document.getElementById("dob").value;
