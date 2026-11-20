@@ -223,6 +223,10 @@ joinForm.addEventListener("submit", function(event) {
 }
 
     const name = document.getElementById("name").value.trim();
+    if (!name) {
+    alert("Please enter your name.");
+    return;
+}
     const dob = document.getElementById("dob").value;
     const photo = document.getElementById("photo").files[0];
 
