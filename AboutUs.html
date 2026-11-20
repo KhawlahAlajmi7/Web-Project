@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - ZAWIYAH</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 
 <body>
@@ -25,8 +24,9 @@
         </nav>
 
         <a href="MemberHub.html">
-            <img src="images/usericon.png" id="user-icon" alt="user profile">
+            <img src="images/usericon.png" id="user-icon" alt="User Profile">
         </a>
+
     </header>
 
 
@@ -44,6 +44,7 @@
                     workshops, classes, activities, and shared experiences.
                 </p>
             </div>
+
             <div class="about-image">
                 <img src="Collection/aboutZ.png" alt="About ZAWIYAH">
             </div>
@@ -59,7 +60,7 @@
             </div>
 
             <div class="mission-text">
-               <h2>Our Mission</h2>
+                <h2>Our Mission</h2>
                 <p>
                     Our mission is to create a supportive space where
                     individuals can develop their photography skills,
@@ -86,36 +87,39 @@
 
                 <div class="instructor-card">
                     <img src="Collection/lama.png" alt="Lama Khalid">
-                    <h3><a href="lama-profile.html">Lama Khalid</a></h3>
+                    <h3>
+                        <a href="lama-profile.html">Lama Khalid</a>
+                    </h3>
                     <p>Photo Editing &amp; Post-Processing</p>
-                    <a href="lama-profile.html">View Profile</a>
                 </div>
 
                 <div class="instructor-card">
                     <img src="Collection/reem.png" alt="Reem Faisal">
-                    <h3><a href="reem-profile.html">Reem Faisal</a></h3>
+                    <h3>
+                        <a href="reem-profile.html">Reem Faisal</a>
+                    </h3>
                     <p>Lighting &amp; Studio Photography</p>
-                    <a href="reem-profile.html">View Profile</a>
                 </div>
 
                 <div class="instructor-card">
                     <img src="Collection/layan.png" alt="Layan Ahmed">
-                    <h3><a href="layan-profile.html">Layan Ahmed</a></h3>
+                    <h3>
+                        <a href="layan-profile.html">Layan Ahmed</a>
+                    </h3>
                     <p>Landscape Photography</p>
-                    <a href="layan-profile.html">View Profile</a>
                 </div>
 
                 <div class="instructor-card">
                     <img src="Collection/sara.png" alt="Sara Ali">
-                    <h3><a href="sara-profile.html">Sara Ali</a></h3>
+                    <h3>
+                        <a href="sara-profile.html">Sara Ali</a>
+                    </h3>
                     <p>Portrait &amp; Lifestyle Photography</p>
-                    <a href="sara-profile.html">View Profile</a>
                 </div>
 
             </div>
+
         </section>
-
-
 
 
         <!-- JOIN OUR TEAM -->
@@ -136,10 +140,15 @@
 
                 <!-- LEFT: PHOTO UPLOAD -->
                 <div class="photo-upload">
+
                     <img src="Collection/upload_image.png" alt="Upload Photo">
+
                     <label for="photo">Upload Photo</label>
-                   <input type="file" id="photo" name="photo" accept="image/*" form="joinForm" required>
+
+                    <input type="file" id="photo" name="photo" accept="image/*" form="joinForm" required>
+
                 </div>
+
 
                 <!-- RIGHT: FORM -->
                 <form class="join-form" id="joinForm" action="#" method="post">
@@ -174,15 +183,17 @@
                     <input type="submit" value="Submit Application">
 
                 </form>
-            </div>
-        </section>
 
+            </div>
+
+        </section>
 
     </main>
 
 
     <!-- FOOTER -->
     <footer>
+
         <div class="footer">
             <p><b>Connect With Us</b></p>
 
@@ -209,54 +220,63 @@
         <div class="copyright">
             <p>Copyright &copy; 2026 Zawiyah</p>
         </div>
+
     </footer>
+
+
+    <!-- JOIN OUR TEAM VALIDATION -->
     <script>
-const joinForm = document.getElementById("joinForm");
+        const joinForm = document.getElementById("joinForm");
 
-joinForm.addEventListener("submit", function(event) {
+        joinForm.addEventListener("submit", function (event) {
 
-    event.preventDefault();
-    if (!joinForm.checkValidity()) {
-    joinForm.reportValidity();
-    return;
-}
+            event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    if (!name) {
-    alert("Please enter your name.");
-    return;
-}
-    const dob = document.getElementById("dob").value;
-    const photo = document.getElementById("photo").files[0];
+            if (!joinForm.checkValidity()) {
+                joinForm.reportValidity();
+                return;
+            }
 
-    // Check if name starts with a number
-    if (/^\d/.test(name)) {
-        alert("Name cannot start with a number.");
-        return;
-    }
+            const name = document.getElementById("name").value.trim();
 
-    // Check if photo is an image
-    if (!photo || !photo.type.startsWith("image/")) {
-        alert("Please upload an image file.");
-        return;
-    }
+            if (!name) {
+                alert("Please enter your name.");
+                return;
+            }
 
-    // Check date of birth
-    const birthYear = new Date(dob).getFullYear();
+            // Check if name starts with a number
+            if (/^\d/.test(name)) {
+                alert("Name cannot start with a number.");
+                return;
+            }
 
-    if (birthYear > 2008) {
-        alert("Year of birth must be 2008 or earlier.");
-        return;
-    }
+            // Check if photo is an image
+            const photo = document.getElementById("photo").files[0];
 
-    // Success message
-    alert("Thank you, " + name + "! Your application has been submitted successfully.");
+            if (!photo || !photo.type.startsWith("image/")) {
+                alert("Please upload an image file.");
+                return;
+            }
 
-    joinForm.reset();
-    document.getElementById("photo").value = "";
+            // Check date of birth
+            const dob = document.getElementById("dob").value;
+            const birthYear = new Date(dob).getFullYear();
 
-});
-</script>
+            if (birthYear > 2008) {
+                alert("Year of birth must be 2008 or earlier.");
+                return;
+            }
+
+            // Success message
+            alert(
+                "Thank you, " + name +
+                "! Your application has been submitted successfully."
+            );
+
+            joinForm.reset();
+
+        });
+    </script>
 
 </body>
 
