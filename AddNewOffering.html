@@ -41,8 +41,7 @@
             <p>Add a new photography workshop, class, activity, or experience</p>
         </section>
 
-        <form class="add-offering-form" action="#" method="post" enctype="multipart/form-data">
-
+        <form class="add-offering-form" action="#" method="post" enctype="multipart/form-data" novalidate>
             <div class="add-offering-fields">
                 <label for="offering-name">Offering Name</label>
                 <input type="text" id="offering-name" name="offering-name" placeholder="Enter offering name" required>
@@ -61,7 +60,7 @@
 
                 <img src="Collection/upload_image.png" alt="Upload an offering image">
 
-                <input type="file" id="offering-image" name="offering-image">
+                <input type="file" id="offering-image" name="offering-image" accept="image/*">
 
             </div>
 
@@ -101,6 +100,8 @@
             <p>Copyright &copy; 2026 Zawiyah</p>
         </div>
     </footer>
+
+    <script src="add-offering.js"></script>
 
 </body>
 
