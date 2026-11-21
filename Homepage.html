@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Zawiyah | The Photography Club </title>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -19,7 +20,13 @@
 			<a href="AboutUs.html">About Us</a>
 		</nav>
 
-		<a href="MemberHub.html"><img src="images/usericon.png" id="user-icon" alt="user profile"></a>
+		<div class="header-actions">
+
+   			 <a href="MemberHub.html"><img src="images/usericon.png" id="user-icon" alt="user profile"> </a>
+			<button id="themeButton" type="button" onclick="changeTheme()">Dark Theme </button>
+
+		</div>
+
 
 		<section class="herotext">
 			<div class="herocontainer">
@@ -148,6 +155,8 @@
 		</section>
 	</main>
 
+	<button id="backToTop" type="button" onclick="goToTop()"> &#8593; Top </button>
+
 	<footer>
 		<div class="footer">
 			<p><b>Connect With Us</b></p>
@@ -157,6 +166,8 @@
 				<a href="#"><img src="images/x.png" alt="X"></a>
 			</div>
 			<p><b>@Zawiyah_sa</b></p>
+			<p><b>Current Time:</b></p>
+			<p id="clock"></p>
 		</div>
 
 		<div class="logo">
@@ -174,6 +185,8 @@
 			<p>Copyright &copy; 2026 Zawiyah</p>
 		</div>
 	</footer>
+
+	<script src="homepage.js"></script>
 
 </body>
 
