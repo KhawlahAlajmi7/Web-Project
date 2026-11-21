@@ -572,6 +572,7 @@ footer {
     gap: 10px;
     padding-bottom: 18px;
     margin-bottom: 35px;
+    margin-top: -10px;
     border-bottom: 1px solid lightgray;
     font-size: 12px;
 }
@@ -992,8 +993,9 @@ footer {
     }
 
     .manager-offerings-section {
-        padding-left: 4%;
-        padding-right: 4%;
+        padding: 45px 7% 90px;
+        display: flex;
+        flex-direction: column;
     }
 
     .manager-section-heading h2 {
@@ -1033,6 +1035,7 @@ footer {
         width: 100%;
     }
 }
+
 
 /* ADD NEW OFFERING PAGE */
 
@@ -1238,6 +1241,7 @@ footer {
     margin: 0 0 10px;
 }
 
+
 /* INSTRUCTORS */
 
 .instructors-section {
@@ -1250,6 +1254,7 @@ footer {
     font-size: 28px;
     margin: 0 0 10px;
 }
+
 .instructors-intro {
     max-width: 600px;
     font-size: 14px;
@@ -1337,9 +1342,11 @@ footer {
 }
 
 .join-description h2 {
+    color: darkslateblue;
     font-size: 28px;
     margin-bottom: 20px;
 }
+
 .join-description p {
     font-size: 14px;
     line-height: 1.5;
@@ -1487,6 +1494,7 @@ footer {
     font-size: 12px;
     text-align: center;
 }
+
 .profile-table th:not(.profile-name) {
     background-color: #eeeeee;
     text-align: center;
@@ -1578,6 +1586,10 @@ footer {
     color: darkslateblue;
 }
 
+.join-description h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
 
 .join-description p {
     font-size: 16px;
