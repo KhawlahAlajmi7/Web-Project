@@ -23,7 +23,7 @@
         </nav>
 
         <a href="MemberHub.html">
-            <img src="images/usericon.png" id="user-icon" alt="user profile">
+            <img src="images/usericon.png" id="user-icon" alt="User profile">
         </a>
     </header>
 
@@ -31,7 +31,9 @@
     <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="Homepage.html">Home</a> &gt;
         <a href="ManagerHub.html">Manager Hub</a> &gt;
-        <a href="ManageActivityLeaders.html" class="active">Manage Activity Leaders & Instructors Page</a>
+        <a href="ManageActivityLeaders.html" class="active">
+            Manage Activity Leaders & Instructors Page
+        </a>
     </nav>
 
     <main class="manage-instructors-page">
@@ -47,41 +49,7 @@
 
             <form action="#" method="get">
 
-                <div class="manage-team-list">
-
-                    <div class="manage-team-card">
-                        <img src="Collection/lama.png" alt="Lama Khalid">
-                        <label>
-                            <input type="checkbox" name="delete-instructor" value="lama">
-                            Lama Khalid
-                        </label>
-                    </div>
-
-                    <div class="manage-team-card">
-                        <img src="Collection/reem.png" alt="Reem Faisal">
-                        <label>
-                            <input type="checkbox" name="delete-instructor" value="reem">
-                            Reem Faisal
-                        </label>
-                    </div>
-
-                    <div class="manage-team-card">
-                        <img src="Collection/layan.png" alt="Layan Ahmed">
-                        <label>
-                            <input type="checkbox" name="delete-instructor" value="layan">
-                            Layan Ahmed
-                        </label>
-                    </div>
-
-                    <div class="manage-team-card">
-                        <img src="Collection/sara.png" alt="Sara Ali">
-                        <label>
-                            <input type="checkbox" name="delete-instructor" value="sara">
-                            Sara Ali
-                        </label>
-                    </div>
-
-                </div>
+                <div class="manage-team-list"></div>
 
                 <div class="manage-delete-action">
                     <input type="submit" value="Delete Selected" class="manage-submit">
@@ -94,7 +62,7 @@
         <section class="add-instructor-section">
             <h2>Add Activity Leader / Instructor</h2>
 
-            <form action="#" method="post" enctype="multipart/form-data" class="manage-instructor-form">
+            <form action="#" method="post" enctype="multipart/form-data" class="manage-instructor-form" novalidate>
 
                 <div class="manage-form-fields">
 
@@ -119,41 +87,21 @@
                         required></textarea>
 
                 </div>
+
                 <div class="manage-photo-section">
                     <label for="instructor-photo">Instructor Photo</label>
 
                     <img id="photo-placeholder" src="Collection/upload_image.png" alt="Upload an instructor image">
+
                     <img id="photo-preview" src="Collection/upload_image.png" alt="Selected instructor photo"
                         style="display: none;">
 
                     <input type="file" id="instructor-photo" name="photo" accept="image/*" required>
                 </div>
 
-
                 <div class="manage-add-action">
                     <input type="submit" value="Add Instructor" class="manage-submit">
                 </div>
-
-                <script>
-                    document.getElementById("instructor-photo").addEventListener("change", function () {
-
-                        const file = this.files[0];
-                        const preview = document.getElementById("photo-preview");
-                        const placeholder = document.getElementById("photo-placeholder");
-
-                        if (file) {
-                            preview.src = URL.createObjectURL(file);
-                            preview.style.display = "block";
-                            placeholder.style.display = "none";
-                        } else {
-                            preview.removeAttribute("src");
-                            preview.style.display = "none";
-                            placeholder.style.display = "block";
-                        }
-                    });
-                </script>
-
-
 
             </form>
         </section>
@@ -164,11 +112,13 @@
     <footer>
         <div class="footer">
             <p><b>Connect With Us</b></p>
+
             <div class="social-icons">
                 <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
                 <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
                 <a href="#"><img src="images/x.png" alt="X"></a>
             </div>
+
             <p><b>@Zawiyah_sa</b></p>
         </div>
 
@@ -187,43 +137,227 @@
             <p>Copyright &copy; 2026 Zawiyah</p>
         </div>
     </footer>
+
     <script>
+
+        // INSTRUCTORS ARRAY
+        const instructors = [
+            {
+                id: "lama",
+                name: "Lama Khalid",
+                image: "Collection/lama.png"
+            },
+            {
+                id: "reem",
+                name: "Reem Faisal",
+                image: "Collection/reem.png"
+            },
+            {
+                id: "layan",
+                name: "Layan Ahmed",
+                image: "Collection/layan.png"
+            },
+            {
+                id: "sara",
+                name: "Sara Ali",
+                image: "Collection/sara.png"
+            }
+        ];
+
         const form = document.querySelector(".manage-instructor-form");
+        const deleteForm = document.querySelector(".manage-team-section form");
         const teamList = document.querySelector(".manage-team-list");
         const photoInput = document.getElementById("instructor-photo");
 
+        // DISPLAY INSTRUCTORS
+        function displayInstructors() {
+
+            teamList.innerHTML = "";
+
+            instructors.forEach(function (instructor) {
+
+                const card = document.createElement("div");
+                card.className = "manage-team-card";
+
+                const img = document.createElement("img");
+                img.src = instructor.image;
+                img.alt = instructor.name;
+
+                const label = document.createElement("label");
+
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.name = "delete-instructor";
+                checkbox.value = instructor.id;
+
+                label.append(checkbox, " " + instructor.name);
+
+                card.append(img, label);
+                teamList.appendChild(card);
+
+            });
+        }
+
+        // SHOW INITIAL INSTRUCTORS
+        displayInstructors();
+
+        // DELETE SELECTED INSTRUCTORS
+        deleteForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const selected = teamList.querySelectorAll(
+                'input[name="delete-instructor"]:checked'
+            );
+
+            if (selected.length === 0) {
+                alert("Please select at least one person to delete.");
+                return;
+            }
+
+            const confirmDelete = confirm(
+                "Are you sure you want to delete the selected people?"
+            );
+
+            if (!confirmDelete) {
+                return;
+            }
+
+            const selectedIds = [];
+
+            selected.forEach(function (checkbox) {
+                selectedIds.push(checkbox.value);
+            });
+
+            for (let i = instructors.length - 1; i >= 0; i--) {
+
+                if (selectedIds.includes(instructors[i].id)) {
+                    instructors.splice(i, 1);
+                }
+
+            }
+
+            displayInstructors();
+
+            alert("Selected people deleted successfully!");
+
+        });
+
+        // PHOTO PREVIEW
+        photoInput.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            const preview = document.getElementById("photo-preview");
+            const placeholder = document.getElementById("photo-placeholder");
+
+            if (file && file.type.startsWith("image/")) {
+
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+                placeholder.style.display = "none";
+
+            } else {
+
+                preview.removeAttribute("src");
+                preview.style.display = "none";
+                placeholder.style.display = "block";
+
+            }
+
+        });
+
+        // ADD NEW INSTRUCTOR
         form.addEventListener("submit", function (event) {
+
             event.preventDefault();
 
             const name = document.getElementById("instructor-name").value.trim();
+            const dob = document.getElementById("instructor-dob").value;
+            const email = document.getElementById("instructor-email");
+            const expertise = document.getElementById("instructor-expertise").value.trim();
+            const skills = document.getElementById("instructor-skills").value.trim();
+            const education = document.getElementById("instructor-education").value.trim();
             const photo = photoInput.files[0];
 
-            if (!form.reportValidity() || !name || !photo) return;
+            // CHECK EMPTY FIELDS
+            if (!name || !dob || !email.value.trim() ||
+                !expertise || !skills || !education || !photo) {
 
-            const card = document.createElement("div");
-            card.className = "manage-team-card";
+                alert("Please fill in all fields.");
+                return;
+            }
 
-            const img = document.createElement("img");
-            img.src = URL.createObjectURL(photo);
-            img.alt = name;
+            // CHECK NAME
+            if (/^\d/.test(name)) {
 
-            const label = document.createElement("label");
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.name = "delete-instructors";
-            checkbox.value = name;
+                alert("Name cannot start with a number.");
+                document.getElementById("instructor-name").focus();
+                return;
 
-            label.append(checkbox, " " + name);
-            card.append(img, label);
-            teamList.appendChild(card);
+            }
+
+            // CHECK AGE
+            const birthDate = new Date(dob);
+            const today = new Date();
+
+            let age = today.getFullYear() - birthDate.getFullYear();
+
+            if (
+                today.getMonth() < birthDate.getMonth() ||
+                (today.getMonth() === birthDate.getMonth() &&
+                    today.getDate() < birthDate.getDate())
+            ) {
+                age--;
+            }
+
+            if (age < 25) {
+
+                alert("Instructor must be at least 25 years old.");
+                return;
+
+            }
+
+            // CHECK EMAIL FORMAT
+            if (!email.validity.valid) {
+
+                alert("Please enter a valid email address.");
+                email.focus();
+                return;
+
+            }
+
+            // CHECK IMAGE TYPE
+            if (!photo.type.startsWith("image/")) {
+
+                alert("Please upload an image file.");
+                return;
+
+            }
+
+            // CREATE NEW INSTRUCTOR
+            const newInstructor = {
+                id: Date.now().toString(),
+                name: name,
+                image: URL.createObjectURL(photo)
+            };
+
+            instructors.push(newInstructor);
+
+            displayInstructors();
+
+            alert("Instructor added successfully!");
 
             form.reset();
 
             document.getElementById("photo-preview").removeAttribute("src");
             document.getElementById("photo-preview").style.display = "none";
             document.getElementById("photo-placeholder").style.display = "block";
+
         });
+
     </script>
+
 </body>
 
 </html>
