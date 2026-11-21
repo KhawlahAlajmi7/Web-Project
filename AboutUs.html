@@ -250,6 +250,21 @@
                 return;
             }
 
+            const skills = document.getElementById("skills").value.trim();
+            const education = document.getElementById("education").value.trim();
+
+            if (!skills || !education) {
+                alert("Please fill in all fields.");
+                return;
+            }
+            const email = document.getElementById("email").value.trim();
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+
             // Check if photo is an image
             const photo = document.getElementById("photo").files[0];
 
