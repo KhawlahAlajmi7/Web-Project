@@ -1,108 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+document.addEventListener("DOMContentLoaded", function () {
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zawiyah | Add New Offering</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    const form = document.querySelector(".add-offering-form");
 
-<body>
+    const nameInput = document.getElementById("offering-name");
+    const priceInput = document.getElementById("offering-price");
+    const descriptionInput = document.getElementById("offering-description");
+    const imageInput = document.getElementById("offering-image");
 
-    <header class="header">
-        <img src="images/Style3.png" id="logo" alt="Website Logo">
+    form.addEventListener("submit", function (event) {
 
-        <nav id="navbar">
-            <a href="Homepage.html">Home</a>
-            <a href="Offerings.html">Offerings</a>
-            <a href="MemberHub.html">Member Hub</a>
-            <a href="ManagerHub.html" class="active">Manager Hub</a>
-            <a href="AboutUs.html">About Us</a>
-        </nav>
+        event.preventDefault();
 
-        <a href="MemberHub.html">
-            <img src="images/usericon.png" id="user-icon" alt="User profile">
-        </a>
-    </header>
+        // Validate empty fields
+        if (
+            nameInput.value.trim() === "" ||
+            priceInput.value.trim() === "" ||
+            descriptionInput.value.trim() === "" ||
+            imageInput.files.length === 0
+        ) {
+            alert("Please fill in all fields.");
+            return;
+        }
 
-    <div class="breadcrumbs">
-        <a href="Homepage.html">Home</a>
-        &gt;
-        <a href="ManagerHub.html">Manager Hub</a>
-        &gt;
-        <a href="AddNewOffering.html" class="active">Add New Offering</a>
-    </div>
+        // Validate offering name
+        if (/^\d/.test(nameInput.value.trim())) {
+            alert("Offering name cannot start with a number.");
+            nameInput.focus();
+            return;
+        }
 
-    <main class="add-offering-page">
+        // Validate price
+        if (priceInput.value.trim() === "" ||
+            !Number.isFinite(Number(priceInput.value)) ||
+            Number(priceInput.value) < 0) {
 
-        <section class="add-offering-intro">
-            <h1>Add New Offering</h1>
-            <p>Add a new photography workshop, class, activity, or experience</p>
-        </section>
+            alert("Please enter a valid price.");
+            priceInput.focus();
+            return;
+        }
 
-        <form class="add-offering-form" action="#" method="post" enctype="multipart/form-data" novalidate>
-            <div class="add-offering-fields">
-                <label for="offering-name">Offering Name</label>
-                <input type="text" id="offering-name" name="offering-name" placeholder="Enter offering name" required>
+        // Validate image
+        const imageFile = imageInput.files[0];
 
-                <label for="offering-price">Price / Registration Fee</label>
-                <input type="number" id="offering-price" name="offering-price" min="0" step="0.1" placeholder="0 SAR"
-                    required>
+        if (!imageFile.type.startsWith("image/")) {
+            alert("Please select an image file.");
+            imageInput.focus();
+            return;
+        }
 
-                <label for="offering-description">Description</label>
-                <textarea id="offering-description" name="offering-description"
-                    placeholder="Describe the photography offering..." required></textarea>
-            </div>
+        // Read image and save offering
+        const reader = new FileReader();
 
-            <div class="add-offering-image">
-                <label for="offering-image">Offering Image</label>
+        reader.onload = function () {
 
-                <img src="Collection/upload_image.png" alt="Upload an offering image">
+            const newOffering = {
+                name: nameInput.value.trim(),
+                price: Number(priceInput.value),
+                description: descriptionInput.value.trim(),
+                image: reader.result
+            };
 
-                <input type="file" id="offering-image" name="offering-image" accept="image/*">
+            // Get previous offerings from Local Storage
+            let offerings = JSON.parse(
+                localStorage.getItem("offerings")
+            ) || [];
 
-            </div>
+            // Add the new offering
+            offerings.push(newOffering);
 
-            <div class="add-offering-submit">
-                <input type="submit" value="Add Offering">
-            </div>
+            // Save all offerings
+            localStorage.setItem(
+                "offerings",
+                JSON.stringify(offerings)
+            );
 
-        </form>
+            alert(
+                newOffering.name + " has been added successfully!"
+            );
 
-    </main>
+            // Clear the form
+            form.reset();
+        };
 
-    <footer>
-        <div class="footer">
-            <p><b>Connect With Us</b></p>
+        reader.onerror = function () {
+            alert("Unable to read the selected image. Please try again.");
+        };
 
-            <div class="social-icons">
-                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="images/x.png" alt="X"></a>
-            </div>
+        reader.readAsDataURL(imageFile);
 
-            <p><b>@Zawiyah_sa</b></p>
-        </div>
+    });
 
-        <div class="logo">
-            <img src="images/Logomark.png" id="logomark" alt="Website Logo">
-        </div>
-
-        <div class="contact">
-            <p><b>Contact Us</b></p>
-            <p><b>Address:</b> 123 Main Street,<br>Riyadh, Saudi Arabia</p>
-            <p><b>Phone:</b> +966 11 123 4567</p>
-            <p><b>Email:</b> info@zawiyah.sa</p>
-        </div>
-
-        <div class="copyright">
-            <p>Copyright &copy; 2026 Zawiyah</p>
-        </div>
-    </footer>
-
-    <script src="add-offering.js"></script>
-
-</body>
-
-</html>
+});
