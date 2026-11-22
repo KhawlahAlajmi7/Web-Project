@@ -2012,7 +2012,7 @@ footer {
     object-fit: cover;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
@@ -2152,7 +2152,7 @@ body.dark-theme #backToTop {
         font-size: 28px;
     }
 
-     /* Testimonials */
+    /* Testimonials */
 
     .testimonials {
         grid-template-columns: 1fr;
@@ -2387,7 +2387,7 @@ body.dark-theme #clock {
         right: 15px;
     }
 
-     .header-actions {
+    .header-actions {
         gap: 8px;
     }
 
