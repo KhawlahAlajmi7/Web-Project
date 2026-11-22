@@ -37,7 +37,7 @@ function loadTheme() {
 loadTheme();
 
 
-window.onscroll = function() {
+window.onscroll = function () {
     showTopButton();
 };
 
