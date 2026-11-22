@@ -35,7 +35,7 @@
 		<section class="join-offering">
 			<h1>Request to Join An Offering</h1>
 
-			<form class="request" action="#" method="POST">
+			<form class="request" action="#" method="POST" novalidate>
 				<label for="offering">Select an Offering</label>
 				<select name="offering" id="offering">
 					<option>Lighting &amp; Composition Basics</option>
@@ -52,6 +52,8 @@
 				<input type="date" name="date" id="date" required>
 				<input type="submit" value="Submit Request" class="button">
 			</form>
+
+			<div id="requests"></div>
 
 			<p><a href="MemberHub.html" class="back-to">Back to Member Hub</a></p>
 		</section>
@@ -84,6 +86,7 @@
 		</div>
 	</footer>
 
+	<script src="request.js"></script>
 </body>
 
 </html>
