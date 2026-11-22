@@ -2455,6 +2455,44 @@ body.dark-theme .photodetails {
     color: #f4e8ff;
 }
 
+/* Instructor Cards */
+body.dark-theme .manage-team-card {
+    background-color: #493558;
+    color: #f4e8ff;
+    border: 1px solid #8c4f9e;
+}
+
+/* Instructor Cards Hover */
+body.dark-theme .manage-team-card:hover {
+    background-color: mediumvioletred;
+    color: white;
+}
+
+body.dark-theme .manage-team-card:hover label {
+    color: white;
+}
+
+/* About Us - Instructor Cards */
+body.dark-theme .instructor-card {
+    background-color: #493558;
+    color: #f4e8ff;
+    border: 1px solid #8c4f9e;
+}
+
+body.dark-theme .instructor-card h3,
+body.dark-theme .instructor-card p {
+    color: #f4e8ff;
+}
+
+body.dark-theme .instructor-card a {
+    color: #ff8bce;
+}
+
+body.dark-theme .instructor-card:hover {
+    background-color: mediumvioletred;
+    color: white;
+}
+
 /* Forms */
 
 body.dark-theme input,
@@ -2463,6 +2501,26 @@ body.dark-theme select {
     background-color: #30233f;
     color: white;
     border: 1px solid #8c4f9e;
+}
+
+
+/* Dark Theme - Cards and Form Containers */
+
+body.dark-theme .request,
+body.dark-theme .evaluation-form,
+body.dark-theme .join-form,
+body.dark-theme .add-offering-form,
+body.dark-theme .join-content,
+body.dark-theme .manage-team-section,
+body.dark-theme .add-instructor-section,
+body.dark-theme .offering-card {
+    background-color: #493558;
+    color: #f4e8ff;
+    border-color: #665078;
+}
+
+body.dark-theme .rating legend {
+    color: #f4e8ff;
 }
 
 /* Tables */
@@ -2475,6 +2533,44 @@ body.dark-theme table {
 body.dark-theme th,
 body.dark-theme td {
     border-color: #8c4f9e;
+}
+
+body.dark-theme table th {
+    background-color: #493558;
+    color: #f4e8ff;
+    border-color: #8c4f9e;
+}
+
+/* Dark Theme - Instructor Profile */
+
+body.dark-theme .profile-table {
+    background-color: #30233f;
+    color: #f4e8ff;
+}
+
+/* Instructor Name Header */
+body.dark-theme .profile-table .profile-name {
+    background-color: #493558;
+    color: #f4e8ff;
+}
+
+/* Instructor Photo Cell */
+body.dark-theme .profile-table .profile-photo-cell {
+    background-color: #493558;
+    color: #f4e8ff;
+}
+
+/* Information Labels */
+body.dark-theme .profile-table th:not(.profile-name) {
+    background-color: #493558;
+    color: #f4e8ff;
+}
+
+/* Table Borders */
+body.dark-theme .profile-table th,
+body.dark-theme .profile-table td {
+    border-color: #8c4f9e;
+    color: #f4e8ff;
 }
 
 /* Footer */
