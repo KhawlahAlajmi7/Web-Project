@@ -23,10 +23,13 @@ form.addEventListener("submit", function (e) {
     if (date === "") {
         errors.push("- Preferred date is required.");
     } else {
-        const chosen = new Date(date);
         const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        if (chosen <= today) {
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+        const day = String(today.getDate()).padStart(2, "0");
+        const todayString = `${year}-${month}-${day}`;
+
+        if (date <= todayString) {
             errors.push("- Preferred date must be in the future.");
         }
     }
