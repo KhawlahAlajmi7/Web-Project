@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Request To Join An Offering </title>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -37,7 +38,8 @@
 
 			<form class="request" action="#" method="POST" novalidate>
 				<label for="offering">Select an Offering</label>
-				<select name="offering" id="offering">
+				<select name="offering" id="offering" required>
+					<option value="">-- Select an Offering --</option>
 					<option>Lighting &amp; Composition Basics</option>
 					<option>Live Photo Critique &amp; Feedback</option>
 					<option>Mobile Photography &amp; Editing</option>
