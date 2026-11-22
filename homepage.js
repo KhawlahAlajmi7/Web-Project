@@ -42,15 +42,14 @@ window.onscroll = function () {
 };
 
 function showTopButton() {
-
     let button = document.getElementById("backToTop");
+    if (!button) return;
 
     if (window.scrollY > 200) {
         button.style.display = "block";
     } else {
         button.style.display = "none";
     }
-
 }
 
 function goToTop() {
@@ -64,13 +63,11 @@ function goToTop() {
 
 
 function updateClock() {
+    let clock = document.getElementById("clock");
+    if (!clock) return;
 
     let now = new Date();
-
-    let time = now.toLocaleTimeString();
-
-    document.getElementById("clock").textContent = time;
-
+    clock.textContent = now.toLocaleTimeString();
 }
 
 updateClock();
