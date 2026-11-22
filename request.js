@@ -1,3 +1,4 @@
+
 const form = document.querySelector("form.request");
 const requestsDiv = document.getElementById("requests");
 let requests = [];
@@ -10,18 +11,21 @@ form.addEventListener("submit", function (e) {
     const date = document.getElementById("date").value;
     const errors = [];
 
+    // Validate offering
     if (offering === "") {
         errors.push("- Please select an offering.");
     }
 
+    // Validate full name
     if (name === "") {
-        errors.push("- Full name is required.");
+        errors.push("- Please enter your full name.");
     } else if (!/^[A-Za-z\u0600-\u06FF]+(\s+[A-Za-z\u0600-\u06FF]+)+$/.test(name)) {
-        errors.push("- Name must be a full name (at least two words) with letters only, no numbers or symbols like ? ! @.");
+        errors.push("- Please enter a valid full name using letters only (first and last name).");
     }
 
+    // Validate preferred date
     if (date === "") {
-        errors.push("- Preferred date is required.");
+        errors.push("- Please select your preferred date.");
     } else {
         const today = new Date();
         const year = today.getFullYear();
@@ -30,17 +34,21 @@ form.addEventListener("submit", function (e) {
         const todayString = `${year}-${month}-${day}`;
 
         if (date <= todayString) {
-            errors.push("- Preferred date must be in the future.");
+            errors.push("- Preferred date must be after today.");
         }
     }
 
+    // Display validation errors
     if (errors.length > 0) {
-        alert("Please fix the following:\n" + errors.join("\n"));
+        alert("Please correct the following:\n\n" + errors.join("\n"));
         return;
     }
 
+    // Confirm successful request
     const stay = confirm(
-        "Your request has been sent successfully!\n\nPress OK to stay on this page, or Cancel to return to the Member Hub."
+        "Your request has been submitted successfully!\n\n" +
+        "Click OK to stay on this page and add another request.\n" +
+        "Click Cancel to return to the Member Hub."
     );
 
     if (!stay) {
@@ -48,18 +56,27 @@ form.addEventListener("submit", function (e) {
         return;
     }
 
-    requests.push({ offering: offering, name: name, date: date });
+    requests.push({
+        offering: offering,
+        name: name,
+        date: date
+    });
+
     showRequests();
     form.reset();
 });
 
+// Display all new requests
 function showRequests() {
     requestsDiv.innerHTML = "<h2>Your New Requests</h2>";
+
     requests.forEach(function (r, i) {
         const p = document.createElement("p");
+
         p.textContent = (i + 1) + ". Offering: " + r.offering +
             " | Member: " + r.name +
-            " | Date: " + r.date;
+            " | Preferred Date: " + r.date;
+
         requestsDiv.appendChild(p);
     });
 }
